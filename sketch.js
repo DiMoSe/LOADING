@@ -1,7 +1,5 @@
 var angle = 0;
 
-var video;
-
 var isLoaded = false;
 
 function preload() {
@@ -14,34 +12,22 @@ function windowResized() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  initializeVideo();
+  isLoaded = true;
 }
-
-
-
-
 
 function draw() {
   
-  if (isLoaded == true) {
+  if (isLoaded === true) {
     drawVideo();
   }else{
     drawLoading();
   }
 }
 
-function initializeVideo() {
-  video = createVideo('assets/videos/centro.mov', videoLoaded);
-}
 
-function videoLoaded() {
-  isLoaded = true;
-  video.loop();
-  video.hide();
-}
 
 function drawVideo() {
-  image(video, 0, 0);
+ rect(30,30,500,500);
 }
 
 function drawLoading() {
